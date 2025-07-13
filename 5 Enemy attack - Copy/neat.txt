@@ -1,0 +1,59 @@
+[NEAT]
+# Population size, adjust based on computational power
+pop_size = 50
+
+# Target fitness score to stop training
+fitness_threshold = 50.0
+
+# Criteria for selecting genomes based on their fitness values
+fitness_criterion = max
+
+reset_on_extinction = False
+
+[DefaultGenome]
+# Use sigmoid as the default activation function
+activation_default = sigmoid
+activation_mutate_rate = 0.0
+activation_options = sigmoid
+
+aggregation_default = sum
+aggregation_mutate_rate = 0.0
+aggregation_options = sum
+
+# Config for bias of nodes
+bias_init_mean = 0.0
+bias_init_stdev = 1.0
+bias_max_value = 30.0
+bias_min_value = -30.0
+bias_mutate_power = 0.5
+bias_mutate_rate = 0.7
+bias_replace_rate = 0.1
+
+# Config for weights of connections
+weight_init_mean = 0.0
+weight_init_stdev = 1.0
+weight_max_value = 30
+weight_min_value = -30
+weight_mutate_power = 0.5
+weight_mutate_rate = 0.8
+weight_replace_rate = 0.1
+
+# Configuration for nodes
+num_hidden = 0
+num_inputs = 4    # Number of inputs for your NEAT network
+num_outputs = 3   # Number of outputs for your NEAT network
+
+[DefaultSpeciesSet]
+# Species compatibility threshold
+compatibility_threshold = 3.0
+
+[DefaultStagnation]
+# Stagnation settings
+species_fitness_func = max
+max_stagnation = 15
+species_elitism = 2
+
+[DefaultReproduction]
+# Reproduction settings
+elitism = 2     # Number of top-performing genomes to carry over
+survival_threshold = 0.2   # Percentage of population that survives for next generation
